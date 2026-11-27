@@ -1,0 +1,263 @@
+{
+  "schema_version": "nanopublication-result/1.1",
+  "illustrative": true,
+  "warning": "Synthetic example only. This is not a formal case result and must not be submitted as an answer.",
+  "case_id": "illustrative-synthetic-case",
+  "status": "success",
+  "status_reason": "Synthetic smoke-test source was processed. This output demonstrates the contract only.",
+  "answers": [
+    {
+      "question": "What evidence-bound findings can be extracted from this synthetic source?",
+      "answer": "Treatment X reduced biomarker Y in the illustrative dataset, and the authors did not report a mechanism."
+    }
+  ],
+  "task_result": {
+    "direct_answer": "Treatment X reduced biomarker Y in the illustrative dataset, and no mechanism was reported."
+  },
+  "nanopublications": [
+    {
+      "nanopub_id": "np-illustrative-01",
+      "assertion": {
+        "text": "Treatment X reduced biomarker Y relative to vehicle after 24 h.",
+        "subject": {
+          "name": "treatment X",
+          "type": "intervention"
+        },
+        "relation": "decreases",
+        "object": {
+          "name": "biomarker Y",
+          "type": "measurement"
+        },
+        "claim_type": "empirical",
+        "polarity": "supports",
+        "conditions": [
+          "relative to vehicle",
+          "after 24 h"
+        ],
+        "quantifiers": [
+          "18%",
+          "n = 12 per group"
+        ]
+      },
+      "evidence": [
+        {
+          "evidence_id": "ev-illustrative-01",
+          "source_id": "src01",
+          "page": 1,
+          "block_id": "src01:p0001:b0002",
+          "char_start": 76,
+          "char_end": 192,
+          "quote": "In this synthetic dataset, treatment X reduced biomarker Y by 18% relative to vehicle after 24 h (n = 12 per group).",
+          "relation_to_claim": "direct_support",
+          "minimality": "minimal",
+          "match": "exact",
+          "sufficiency_rationale": "The sentence directly reports the subject, direction, object, comparison, time and sample size.",
+          "locator": {
+            "source_id": "src01",
+            "page": 1,
+            "block_id": "src01:p0001:b0002",
+            "char_start": 76,
+            "char_end": 192
+          }
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "src01",
+          "path": "/input/demo_source.txt",
+          "title": "Illustrative Synthetic Study - not a real paper",
+          "authors": "Synthetic Example",
+          "year": 2026,
+          "doi": null,
+          "sha256": "illustrative-not-a-real-hash"
+        }
+      ],
+      "confidence": {
+        "score": null,
+        "basis": [
+          "exact_evidence_match",
+          "synthetic_example"
+        ]
+      },
+      "lineage": {
+        "parent_nanopub_id": null,
+        "supersedes": [],
+        "duplicate_of": null,
+        "dedupe_key": "illustrative-01"
+      },
+      "validation": {
+        "errors": [],
+        "warnings": [],
+        "evidence_exact": true
+      }
+    },
+    {
+      "nanopub_id": "np-illustrative-02",
+      "assertion": {
+        "text": "The source did not report a mechanistic explanation for the observed effect.",
+        "subject": {
+          "name": "source",
+          "type": "document"
+        },
+        "relation": "not_reported",
+        "object": {
+          "name": "mechanistic explanation",
+          "type": "knowledge_gap"
+        },
+        "claim_type": "limitation",
+        "polarity": "inconclusive",
+        "conditions": [],
+        "quantifiers": []
+      },
+      "evidence": [
+        {
+          "evidence_id": "ev-illustrative-02",
+          "source_id": "src01",
+          "page": 1,
+          "block_id": "src01:p0001:b0019",
+          "char_start": 1039,
+          "char_end": 1092,
+          "quote": "The authors did not report a mechanistic explanation.",
+          "relation_to_claim": "direct_support",
+          "minimality": "minimal",
+          "match": "exact",
+          "sufficiency_rationale": "The sentence explicitly reports the absence of a mechanistic explanation.",
+          "locator": {
+            "source_id": "src01",
+            "page": 1,
+            "block_id": "src01:p0001:b0019",
+            "char_start": 1039,
+            "char_end": 1092
+          }
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "src01",
+          "path": "/input/demo_source.txt",
+          "title": "Illustrative Synthetic Study - not a real paper",
+          "authors": "Synthetic Example",
+          "year": 2026,
+          "doi": null,
+          "sha256": "illustrative-not-a-real-hash"
+        }
+      ],
+      "confidence": {
+        "score": null,
+        "basis": [
+          "exact_evidence_match",
+          "absence_of_reporting",
+          "synthetic_example"
+        ]
+      },
+      "lineage": {
+        "parent_nanopub_id": null,
+        "supersedes": [],
+        "duplicate_of": null,
+        "dedupe_key": "illustrative-02"
+      },
+      "validation": {
+        "errors": [],
+        "warnings": [],
+        "evidence_exact": true
+      }
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "src01",
+      "path": "/input/demo_source.txt",
+      "relative_path": "demo_source.txt",
+      "kind": "text",
+      "role": "paper",
+      "sha256": "illustrative-not-a-real-hash",
+      "title": "Illustrative Synthetic Study - not a real paper",
+      "authors": "Synthetic Example",
+      "year": 2026,
+      "doi": null,
+      "journal": null,
+      "version": "example-v1",
+      "pages": 1,
+      "needs_ocr_pages": []
+    }
+  ],
+  "unresolved": [],
+  "conflicts": [],
+  "quality_report": {
+    "claim_count": 2,
+    "evidence_count": 2,
+    "exact_evidence_rate": 1.0,
+    "claims_with_compound_flags": 0,
+    "atomicity_flag_rate": 0.0,
+    "source_count": 1,
+    "unresolved_count": 0,
+    "validation_status": "illustrative",
+    "errors_count": 0,
+    "warnings_count": 0,
+    "mechanical_checks_only": true,
+    "semantic_review_required": true
+  },
+  "validation": {
+    "status": "illustrative",
+    "errors": [],
+    "warnings": [],
+    "duplicates": [],
+    "validated_at": "2026-01-01T00:00:00+00:00"
+  },
+  "contract_validation": {
+    "status": "passed",
+    "required_fields": [
+      "case_id",
+      "status",
+      "answers",
+      "nanopublications",
+      "unresolved"
+    ],
+    "errors": []
+  },
+  "input": {
+    "case_path": "/input/demo_case.json",
+    "case_sha256": "illustrative-not-a-real-hash",
+    "materials": [
+      {
+        "source_id": "src01",
+        "path": "/input/demo_source.txt"
+      }
+    ]
+  },
+  "output_contract": {
+    "required": [
+      "case_id",
+      "status",
+      "answers",
+      "nanopublications",
+      "unresolved"
+    ]
+  },
+  "change_log": [
+    {
+      "at": "2026-01-01T00:00:00+00:00",
+      "action": "illustrative_example",
+      "detail": "Synthetic example generated for documentation only."
+    }
+  ],
+  "generated_at": "2026-01-01T00:00:00+00:00"
+  ,
+  "artifact_manifest": {
+    "result_json": "illustrative-only", 
+    "evidence_ledger_jsonl": "illustrative-only",
+    "evidence_table_csv": "illustrative-only",
+    "result_summary_md": "illustrative-only",
+    "input_case_sha256": null,
+    "input_task_sha256": null,
+    "result_schema": "schemas/result.schema.json",
+    "result_schema_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "skill_schema": "nanopublication-result/1.1",
+    "evidence_row_count": 2
+  },
+  "schema_validation": {
+    "status": "illustrative",
+    "schema_path": "schemas/result.schema.json",
+    "issues": []
+  }
+}
