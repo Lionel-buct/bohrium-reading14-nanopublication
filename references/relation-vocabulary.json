@@ -1,0 +1,92 @@
+{
+  "_meta": {
+    "version": "1.1.0",
+    "purpose": "Controlled relation vocabulary for atomic scientific assertions.",
+    "rule": "Choose the narrowest applicable relation. If none fits, use other and state the exact relation in assertion.relation_detail.",
+    "direction_rule": "subject -> relation -> object. Do not reverse causal or comparative direction."
+  },
+  "increases": {
+    "label_zh": "增加",
+    "definition": "The subject raises the value, rate, probability or level of the object under stated conditions."
+  },
+  "decreases": {
+    "label_zh": "降低",
+    "definition": "The subject lowers the value, rate, probability or level of the object under stated conditions."
+  },
+  "no_change": {
+    "label_zh": "无显著变化",
+    "definition": "The subject has no reported or detected change in the object within the tested conditions."
+  },
+  "associates_with": {
+    "label_zh": "相关",
+    "definition": "A statistical or observed association is reported without sufficient evidence for causation."
+  },
+  "causes": {
+    "label_zh": "导致",
+    "definition": "The source provides evidence that the subject produces the object as a causal effect."
+  },
+  "enables": {
+    "label_zh": "使能",
+    "definition": "The subject makes the object possible, feasible or operational."
+  },
+  "inhibits": {
+    "label_zh": "抑制",
+    "definition": "The subject reduces the activity, growth or function of the object."
+  },
+  "predicts": {
+    "label_zh": "预测",
+    "definition": "The subject forecasts or is statistically predictive of the object."
+  },
+  "outperforms": {
+    "label_zh": "优于",
+    "definition": "The subject performs better than the object on a stated metric and comparison."
+  },
+  "equivalent_to": {
+    "label_zh": "等价于",
+    "definition": "The subject and object are reported as statistically or operationally equivalent under stated criteria."
+  },
+  "measured_as": {
+    "label_zh": "测量为",
+    "definition": "The assertion reports a measured value, property or estimated quantity."
+  },
+  "observed_in": {
+    "label_zh": "观察到",
+    "definition": "The subject is observed in the stated population, sample, material or setting."
+  },
+  "requires": {
+    "label_zh": "需要",
+    "definition": "The object is a reported prerequisite or dependency of the subject."
+  },
+  "produces": {
+    "label_zh": "产生",
+    "definition": "The subject yields or generates the object."
+  },
+  "uses_method": {
+    "label_zh": "使用方法",
+    "definition": "The subject uses the object as a method, instrument or protocol."
+  },
+  "validates": {
+    "label_zh": "验证",
+    "definition": "The subject is used to validate the object, or the object validates the subject."
+  },
+  "contradicts": {
+    "label_zh": "相矛盾",
+    "definition": "The subject is reported to conflict with the object."
+  },
+  "limited_to": {
+    "label_zh": "限于",
+    "definition": "The assertion's conclusion is explicitly restricted to the stated object, condition or population."
+  },
+  "not_reported": {
+    "label_zh": "未报告",
+    "definition": "The source does not report the requested quantity or relation; this is an evidence-boundary assertion."
+  },
+  "uncertain": {
+    "label_zh": "无法判断",
+    "definition": "The source is insufficient, ambiguous or conflicting, so the requested relation cannot be determined."
+  },
+  "other": {
+    "label_zh": "其他",
+    "definition": "Use only when the relation is scientific but outside this vocabulary; provide assertion.relation_detail."
+  }
+}
