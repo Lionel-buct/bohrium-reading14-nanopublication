@@ -1,0 +1,621 @@
+[
+  {
+    "sample_id": "assertion-01",
+    "illustrative": true,
+    "claim_type": "empirical",
+    "assertion": {
+      "text": "Treatment X reduced biomarker Y relative to vehicle after 24 h.",
+      "subject": {
+        "name": "treatment X",
+        "type": "intervention"
+      },
+      "relation": "decreases",
+      "object": {
+        "name": "biomarker Y",
+        "type": "measurement"
+      },
+      "polarity": "supports",
+      "conditions": [
+        "relative to vehicle",
+        "after 24 h"
+      ],
+      "quantifiers": [
+        "n = 12 per group"
+      ]
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "treatment X reduced biomarker Y by 18% relative to vehicle after 24 h (n = 12 per group)",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-02",
+    "illustrative": true,
+    "claim_type": "empirical",
+    "assertion": {
+      "text": "The reduction in biomarker Y was statistically significant under the reported two-sided Welch t-test.",
+      "subject": {
+        "name": "biomarker Y reduction",
+        "type": "measurement"
+      },
+      "relation": "measured_as",
+      "object": {
+        "name": "statistically significant",
+        "type": "statistical_result"
+      },
+      "polarity": "supports",
+      "conditions": [
+        "two-sided Welch t-test"
+      ],
+      "quantifiers": [
+        "p = 0.03"
+      ]
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "The reduction was statistically significant (p = 0.03, two-sided Welch t-test).",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-03",
+    "illustrative": true,
+    "claim_type": "negative",
+    "assertion": {
+      "text": "Treatment X did not significantly change body weight in the reported comparison.",
+      "subject": {
+        "name": "treatment X",
+        "type": "intervention"
+      },
+      "relation": "no_change",
+      "object": {
+        "name": "body weight",
+        "type": "measurement"
+      },
+      "polarity": "supports",
+      "conditions": [
+        "reported comparison"
+      ],
+      "quantifiers": [
+        "p = 0.41"
+      ]
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "No significant change in body weight was observed (p = 0.41).",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-04",
+    "illustrative": true,
+    "claim_type": "negative",
+    "assertion": {
+      "text": "No effect of treatment X on biomarker Y was detected at 6 h.",
+      "subject": {
+        "name": "treatment X effect on biomarker Y",
+        "type": "effect"
+      },
+      "relation": "no_change",
+      "object": {
+        "name": "6 h time point",
+        "type": "condition"
+      },
+      "polarity": "supports",
+      "conditions": [
+        "6 h"
+      ],
+      "quantifiers": []
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "The effect was absent at 6 h.",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-05",
+    "illustrative": true,
+    "claim_type": "empirical",
+    "assertion": {
+      "text": "The treatment effect on biomarker Y was still observed at 48 h.",
+      "subject": {
+        "name": "treatment effect on biomarker Y",
+        "type": "effect"
+      },
+      "relation": "observed_in",
+      "object": {
+        "name": "48 h time point",
+        "type": "condition"
+      },
+      "polarity": "supports",
+      "conditions": [
+        "48 h"
+      ],
+      "quantifiers": []
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "The effect persisted at 48 h.",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-06",
+    "illustrative": true,
+    "claim_type": "negative",
+    "assertion": {
+      "text": "Treatment X did not change marker Z.",
+      "subject": {
+        "name": "treatment X",
+        "type": "intervention"
+      },
+      "relation": "no_change",
+      "object": {
+        "name": "marker Z",
+        "type": "measurement"
+      },
+      "polarity": "supports",
+      "conditions": [],
+      "quantifiers": []
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "Treatment X did not alter marker Z.",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-07",
+    "illustrative": true,
+    "claim_type": "methodological",
+    "assertion": {
+      "text": "The synthetic study included 24 samples.",
+      "subject": {
+        "name": "synthetic study",
+        "type": "study"
+      },
+      "relation": "measured_as",
+      "object": {
+        "name": "24 samples",
+        "type": "sample_size"
+      },
+      "polarity": "supports",
+      "conditions": [],
+      "quantifiers": [
+        "24"
+      ]
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "The study included 24 synthetic samples.",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-08",
+    "illustrative": true,
+    "claim_type": "methodological",
+    "assertion": {
+      "text": "Samples were randomly assigned to two groups.",
+      "subject": {
+        "name": "samples",
+        "type": "sample_set"
+      },
+      "relation": "uses_method",
+      "object": {
+        "name": "random assignment to two groups",
+        "type": "method"
+      },
+      "polarity": "supports",
+      "conditions": [],
+      "quantifiers": [
+        "two groups"
+      ]
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "Samples were randomly assigned to two groups.",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-09",
+    "illustrative": true,
+    "claim_type": "methodological",
+    "assertion": {
+      "text": "The assay was run in triplicate.",
+      "subject": {
+        "name": "assay",
+        "type": "procedure"
+      },
+      "relation": "uses_method",
+      "object": {
+        "name": "triplicate execution",
+        "type": "method"
+      },
+      "polarity": "supports",
+      "conditions": [],
+      "quantifiers": [
+        "triplicate"
+      ]
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "The assay was performed in triplicate.",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-10",
+    "illustrative": true,
+    "claim_type": "methodological",
+    "assertion": {
+      "text": "Measured values were reported as mean plus or minus standard deviation.",
+      "subject": {
+        "name": "measured values",
+        "type": "measurement"
+      },
+      "relation": "measured_as",
+      "object": {
+        "name": "mean plus or minus standard deviation",
+        "type": "summary_statistic"
+      },
+      "polarity": "supports",
+      "conditions": [],
+      "quantifiers": []
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "The measured values are reported as mean plus or minus standard deviation.",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-11",
+    "illustrative": true,
+    "claim_type": "empirical",
+    "assertion": {
+      "text": "The reported 95% confidence interval for the reduction was 6% to 30%.",
+      "subject": {
+        "name": "95% confidence interval for the reduction",
+        "type": "statistical_estimate"
+      },
+      "relation": "measured_as",
+      "object": {
+        "name": "6% to 30%",
+        "type": "interval"
+      },
+      "polarity": "supports",
+      "conditions": [
+        "95% confidence level"
+      ],
+      "quantifiers": [
+        "6%",
+        "30%"
+      ]
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "The 95% confidence interval for the reduction was 6% to 30%.",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-12",
+    "illustrative": true,
+    "claim_type": "limitation",
+    "assertion": {
+      "text": "The authors described the reported result as preliminary.",
+      "subject": {
+        "name": "authors",
+        "type": "agent"
+      },
+      "relation": "limited_to",
+      "object": {
+        "name": "preliminary interpretation",
+        "type": "epistemic_status"
+      },
+      "polarity": "supports",
+      "conditions": [],
+      "quantifiers": []
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "The authors describe the result as preliminary.",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-13",
+    "illustrative": true,
+    "claim_type": "methodological",
+    "assertion": {
+      "text": "The experiment used a cell-based assay.",
+      "subject": {
+        "name": "experiment",
+        "type": "study"
+      },
+      "relation": "uses_method",
+      "object": {
+        "name": "cell-based assay",
+        "type": "method"
+      },
+      "polarity": "supports",
+      "conditions": [],
+      "quantifiers": []
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "The experiment used a cell-based assay.",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-14",
+    "illustrative": true,
+    "claim_type": "methodological",
+    "assertion": {
+      "text": "Two samples with failed quality control were excluded from the analysis.",
+      "subject": {
+        "name": "analysis",
+        "type": "procedure"
+      },
+      "relation": "other",
+      "relation_detail": "excluded_from_analysis",
+      "object": {
+        "name": "two samples with failed quality control",
+        "type": "sample_set"
+      },
+      "polarity": "supports",
+      "conditions": [],
+      "quantifiers": [
+        "two"
+      ]
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "The analysis excluded two samples with failed quality control.",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-15",
+    "illustrative": true,
+    "claim_type": "limitation",
+    "assertion": {
+      "text": "The single-dose experiment does not establish a dose-response relationship.",
+      "subject": {
+        "name": "single-dose experiment",
+        "type": "study_design"
+      },
+      "relation": "limited_to",
+      "object": {
+        "name": "dose-response claim",
+        "type": "inference"
+      },
+      "polarity": "refutes",
+      "conditions": [
+        "single dose"
+      ],
+      "quantifiers": []
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "No dose-response claim can be established from this single-dose experiment.",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-16",
+    "illustrative": true,
+    "claim_type": "limitation",
+    "assertion": {
+      "text": "The reported p value applies only to the 24 h comparison.",
+      "subject": {
+        "name": "reported p value",
+        "type": "statistical_result"
+      },
+      "relation": "limited_to",
+      "object": {
+        "name": "24 h comparison",
+        "type": "condition"
+      },
+      "polarity": "supports",
+      "conditions": [
+        "24 h"
+      ],
+      "quantifiers": []
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "The reported p value applies only to the 24 h comparison.",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-17",
+    "illustrative": true,
+    "claim_type": "methodological",
+    "assertion": {
+      "text": "The effect size was calculated from normalized fluorescence.",
+      "subject": {
+        "name": "effect size",
+        "type": "statistical_estimate"
+      },
+      "relation": "measured_as",
+      "object": {
+        "name": "normalized fluorescence",
+        "type": "measurement_input"
+      },
+      "polarity": "supports",
+      "conditions": [],
+      "quantifiers": []
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "The effect size was calculated from normalized fluorescence.",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-18",
+    "illustrative": true,
+    "claim_type": "limitation",
+    "assertion": {
+      "text": "The source did not report a mechanistic explanation for the effect.",
+      "subject": {
+        "name": "source",
+        "type": "document"
+      },
+      "relation": "not_reported",
+      "object": {
+        "name": "mechanistic explanation",
+        "type": "knowledge_gap"
+      },
+      "polarity": "inconclusive",
+      "conditions": [],
+      "quantifiers": []
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "The authors did not report a mechanistic explanation.",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-19",
+    "illustrative": true,
+    "claim_type": "empirical",
+    "assertion": {
+      "text": "The direction of the result was consistent across three assay plates.",
+      "subject": {
+        "name": "direction of the result",
+        "type": "effect_pattern"
+      },
+      "relation": "observed_in",
+      "object": {
+        "name": "three assay plates",
+        "type": "sample_set"
+      },
+      "polarity": "supports",
+      "conditions": [],
+      "quantifiers": [
+        "three"
+      ]
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "The result was directionally consistent across three assay plates.",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  },
+  {
+    "sample_id": "assertion-20",
+    "illustrative": true,
+    "claim_type": "limitation",
+    "assertion": {
+      "text": "The conclusion is limited to the tested concentration.",
+      "subject": {
+        "name": "conclusion",
+        "type": "claim_scope"
+      },
+      "relation": "limited_to",
+      "object": {
+        "name": "tested concentration",
+        "type": "condition"
+      },
+      "polarity": "supports",
+      "conditions": [
+        "tested concentration"
+      ],
+      "quantifiers": []
+    },
+    "evidence": [
+      {
+        "source_id": "src01",
+        "page": 1,
+        "quote": "The conclusion is limited to the tested concentration.",
+        "relation_to_claim": "direct_support",
+        "minimality": "minimal"
+      }
+    ]
+  }
+]
