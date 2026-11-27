@@ -1,0 +1,22 @@
+ILLUSTRATIVE SYNTHETIC STUDY - NOT A FORMAL CASE OR REAL SCIENTIFIC RESULT
+
+In this synthetic dataset, treatment X reduced biomarker Y by 18% relative to vehicle after 24 h (n = 12 per group).
+The reduction was statistically significant (p = 0.03, two-sided Welch t-test).
+No significant change in body weight was observed (p = 0.41).
+The effect was absent at 6 h.
+The effect persisted at 48 h.
+Treatment X did not alter marker Z.
+The study included 24 synthetic samples.
+Samples were randomly assigned to two groups.
+The assay was performed in triplicate.
+The measured values are reported as mean plus or minus standard deviation.
+The 95% confidence interval for the reduction was 6% to 30%.
+The authors describe the result as preliminary.
+The experiment used a cell-based assay.
+The analysis excluded two samples with failed quality control.
+No dose-response claim can be established from this single-dose experiment.
+The reported p value applies only to the 24 h comparison.
+The effect size was calculated from normalized fluorescence.
+The authors did not report a mechanistic explanation.
+The result was directionally consistent across three assay plates.
+The conclusion is limited to the tested concentration.
