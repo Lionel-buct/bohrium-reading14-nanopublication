@@ -1,0 +1,35 @@
+{
+  "case_id": "illustrative-synthetic-case",
+  "question": "What evidence-bound findings can be extracted from this synthetic source?",
+  "materials": [
+    {
+      "role": "paper",
+      "path": "demo_source.txt"
+    }
+  ],
+  "metadata": {
+    "title": "Illustrative Synthetic Study - not a real paper",
+    "authors": [
+      "Synthetic Example"
+    ],
+    "year": 2026,
+    "version": "example-v1"
+  },
+  "output_contract": {
+    "required": [
+      "case_id",
+      "status",
+      "answers",
+      "nanopublications",
+      "unresolved"
+    ],
+    "properties": {
+      "answers": {
+        "type": "array"
+      },
+      "nanopublications": {
+        "type": "array"
+      }
+    }
+  }
+}
