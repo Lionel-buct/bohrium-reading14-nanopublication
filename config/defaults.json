@@ -1,0 +1,43 @@
+{
+  "schema_version": "nanopublication-config/1.1",
+  "skill_version": "1.1.1",
+  "pipeline": {
+    "runtime_probe_script": "scripts/runtime_probe.py",
+    "prepare_script": "scripts/prepare_case.py",
+    "ocr_merge_script": "scripts/merge_ocr.py",
+    "validator_script": "scripts/validate_nanopubs.py",
+    "finalizer_script": "scripts/finalize_result.py",
+    "default_work_dir": "/app/work",
+    "default_output": "/app/output/result.json"
+  },
+  "pdf": {
+    "render_empty_pages": true,
+    "render_dpi": 150,
+    "prefer_pypdf": true,
+    "fallback_pdftotext": true
+  },
+  "claims": {
+    "max_assertion_chars": 420,
+    "max_evidence_chars": 1200,
+    "max_evidence_sentences": 3,
+    "minimum_fuzzy_similarity": 0.88,
+    "default_claim_type": "empirical",
+    "default_polarity": "supports",
+    "default_evidence_relation": "direct_support",
+    "default_minimality": "minimal"
+  },
+  "quality": {
+    "require_case_id": true,
+    "require_evidence": true,
+    "require_contract_fields": true,
+    "require_source_metadata_where_available": true,
+    "mechanical_checks_only": true,
+    "semantic_review_required": true
+  },
+  "resource_limits": {
+    "max_text_files": 50,
+    "max_file_bytes": 512000,
+    "max_total_bytes": 2097152,
+    "allow_symlinks": false
+  }
+}
