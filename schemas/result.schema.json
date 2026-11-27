@@ -1,0 +1,659 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/nanopublication-result.schema.json",
+  "title": "Nanopublication Evidence Forge result",
+  "description": "Internal validation schema for results produced by Nanopublication Evidence Forge 1.1. Case-specific output_contract fields may also appear at the root.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "case_id",
+    "status",
+    "status_reason",
+    "task_result",
+    "nanopublications",
+    "sources",
+    "unresolved",
+    "conflicts",
+    "quality_report",
+    "validation",
+    "contract_validation",
+    "input",
+    "output_contract",
+    "change_log",
+    "generated_at",
+    "artifact_manifest"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "nanopublication-result/1.1"
+    },
+    "case_id": {
+      "type": [
+        "string",
+        "number"
+      ]
+    },
+    "status": {
+      "enum": [
+        "success",
+        "partial",
+        "unable",
+        "refused"
+      ]
+    },
+    "status_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_result": {
+      "type": "object"
+    },
+    "nanopublications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/nanopublication"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "unresolved": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "quality_report": {
+      "type": "object",
+      "required": [
+        "validation_status",
+        "errors_count",
+        "warnings_count",
+        "mechanical_checks_only",
+        "semantic_review_required"
+      ],
+      "properties": {
+        "validation_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "errors_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "warnings_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mechanical_checks_only": {
+          "type": "boolean"
+        },
+        "semantic_review_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": [
+        "status",
+        "errors",
+        "warnings",
+        "duplicates"
+      ],
+      "properties": {
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "errors": {
+          "type": "array"
+        },
+        "warnings": {
+          "type": "array"
+        },
+        "duplicates": {
+          "type": "array"
+        },
+        "validated_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "draft_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "contract_validation": {
+      "type": "object",
+      "required": [
+        "status",
+        "required_fields",
+        "errors",
+        "issues",
+        "checklist"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "passed",
+            "failed"
+          ]
+        },
+        "required_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "checklist": {
+          "type": "object"
+        },
+        "promotions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "input": {
+      "type": "object",
+      "required": [
+        "case_id_original",
+        "case_path",
+        "case_sha256",
+        "materials"
+      ],
+      "properties": {
+        "case_id_original": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "case_path": {
+          "type": "string"
+        },
+        "case_sha256": {
+          "type": "string"
+        },
+        "materials": {
+          "type": "array"
+        }
+      }
+    },
+    "output_contract": {},
+    "change_log": {
+      "type": "array"
+    },
+    "generated_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact_manifest": {
+      "type": "object",
+      "required": [
+        "result_json",
+        "evidence_ledger_jsonl",
+        "evidence_table_csv",
+        "result_schema_sha256",
+        "skill_schema",
+        "evidence_row_count"
+      ],
+      "properties": {
+        "result_json": {
+          "type": "string"
+        },
+        "evidence_ledger_jsonl": {
+          "type": "string"
+        },
+        "evidence_table_csv": {
+          "type": "string"
+        },
+        "result_summary_md": {
+          "type": "string"
+        },
+        "input_case_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "input_task_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "result_schema": {
+          "type": "string"
+        },
+        "result_schema_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "skill_schema": {
+          "const": "nanopublication-result/1.1"
+        },
+        "evidence_row_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "schema_validation": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "entity": {
+      "type": "object",
+      "required": [
+        "name",
+        "type"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "locator": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "page",
+        "block_id",
+        "char_start",
+        "char_end"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "page": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "block_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "char_start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "char_end": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "evidence_id",
+        "source_id",
+        "page",
+        "block_id",
+        "char_start",
+        "char_end",
+        "quote",
+        "relation_to_claim",
+        "minimality",
+        "match",
+        "sufficiency_rationale",
+        "locator"
+      ],
+      "properties": {
+        "evidence_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "page": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "block_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "block_kind": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "char_start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "char_end": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relation_to_claim": {
+          "enum": [
+            "direct_support",
+            "indirect_support",
+            "context",
+            "contradiction",
+            "complementary"
+          ]
+        },
+        "minimality": {
+          "enum": [
+            "minimal",
+            "expanded_for_context",
+            "unresolved"
+          ]
+        },
+        "match": {
+          "enum": [
+            "exact",
+            "whitespace_normalized",
+            "fuzzy",
+            "unresolved"
+          ]
+        },
+        "sufficiency_rationale": {
+          "type": "string",
+          "minLength": 18
+        },
+        "locator": {
+          "$ref": "#/$defs/locator"
+        }
+      }
+    },
+    "nanopublication": {
+      "type": "object",
+      "required": [
+        "nanopub_id",
+        "assertion",
+        "evidence",
+        "sources",
+        "confidence",
+        "lineage",
+        "validation"
+      ],
+      "properties": {
+        "nanopub_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assertion": {
+          "type": "object",
+          "required": [
+            "text",
+            "subject",
+            "relation",
+            "object",
+            "claim_type",
+            "polarity",
+            "conditions",
+            "quantifiers"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "subject": {
+              "$ref": "#/$defs/entity"
+            },
+            "relation": {
+              "type": "string",
+              "minLength": 1
+            },
+            "relation_detail": {
+              "type": "string"
+            },
+            "object": {
+              "$ref": "#/$defs/entity"
+            },
+            "claim_type": {
+              "enum": [
+                "empirical",
+                "causal",
+                "comparative",
+                "descriptive",
+                "methodological",
+                "negative",
+                "association",
+                "limitation"
+              ]
+            },
+            "polarity": {
+              "enum": [
+                "supports",
+                "refutes",
+                "inconclusive",
+                "not_applicable"
+              ]
+            },
+            "conditions": {
+              "type": "array"
+            },
+            "quantifiers": {
+              "type": "array"
+            }
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "sources": {
+          "type": "array"
+        },
+        "confidence": {
+          "type": "object",
+          "required": [
+            "score",
+            "basis"
+          ],
+          "properties": {
+            "score": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "basis": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "lineage": {
+          "type": "object",
+          "required": [
+            "parent_nanopub_id",
+            "supersedes",
+            "duplicate_of",
+            "dedupe_key"
+          ],
+          "properties": {
+            "parent_nanopub_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "supersedes": {
+              "type": "array"
+            },
+            "duplicate_of": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "dedupe_key": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "validation": {
+          "type": "object",
+          "required": [
+            "errors",
+            "warnings",
+            "evidence_exact"
+          ],
+          "properties": {
+            "errors": {
+              "type": "array"
+            },
+            "warnings": {
+              "type": "array"
+            },
+            "evidence_exact": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "path",
+        "relative_path",
+        "kind",
+        "role",
+        "sha256",
+        "pages",
+        "needs_ocr_pages"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string"
+        },
+        "relative_path": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "pages": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "needs_ocr_pages": {
+          "type": "array"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "authors": {
+          "type": [
+            "array",
+            "string",
+            "null"
+          ]
+        },
+        "year": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "doi": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "journal": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "version": {
+          "type": [
+            "string",
+            "number",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}
